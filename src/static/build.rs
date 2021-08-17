@@ -18,7 +18,7 @@ fn main() {
         .cuda(true)
         .flag("-Xcompiler")
         .flag("-fPIC")
-        .flag("-std=c99")
+        .include(std::path::PathBuf::from("/opt/cuda/include"))
         .flag("-w")
         .shared_flag(true)
         .compile("a");
