@@ -82,6 +82,7 @@ pub(crate) fn generate_bindings(header: &std::path::Path, out: &std::path::Path)
                 .to_str()
                 .expect("[generate_bindings] Error with header!"),
         )
+        .clang_arg("-I/opt/cuda/include")
         .generate()
         .expect("Unable to generate bindings");
     let out_path = PathBuf::from(out);
